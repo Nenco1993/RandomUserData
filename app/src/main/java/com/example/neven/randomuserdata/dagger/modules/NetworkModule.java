@@ -1,7 +1,5 @@
 package com.example.neven.randomuserdata.dagger.modules;
 
-import android.content.Context;
-import com.example.neven.randomuserdata.MyApplication;
 import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;

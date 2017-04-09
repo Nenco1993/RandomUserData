@@ -1,33 +1,22 @@
 package com.example.neven.randomuserdata.activities;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.example.neven.randomuserdata.MyApplication;
 import com.example.neven.randomuserdata.R;
-import com.example.neven.randomuserdata.adapters.ChildItem;
-import com.example.neven.randomuserdata.adapters.HeaderItem;
 import com.example.neven.randomuserdata.adapters.Item;
 import com.example.neven.randomuserdata.adapters.UsersAdapter;
-import com.example.neven.randomuserdata.dagger.components.AppComponent;
-import com.example.neven.randomuserdata.dagger.components.ListComponent;
 import com.example.neven.randomuserdata.dagger.modules.ListModule;
-import com.example.neven.randomuserdata.models.Result;
 import com.example.neven.randomuserdata.presenters.DownloadPresenter;
 import com.example.neven.randomuserdata.views.ShowData;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements ShowData {

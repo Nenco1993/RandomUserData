@@ -1,7 +1,6 @@
 package com.example.neven.randomuserdata.dagger.modules;
 
 import com.example.neven.randomuserdata.activities.MainActivity;
-import com.example.neven.randomuserdata.dagger.components.ListComponent;
 import com.example.neven.randomuserdata.dagger.scopes.ActivityScope;
 import com.example.neven.randomuserdata.presenters.DownloadPresenter;
 import com.example.neven.randomuserdata.presenters.DownloadPresenterImpl;

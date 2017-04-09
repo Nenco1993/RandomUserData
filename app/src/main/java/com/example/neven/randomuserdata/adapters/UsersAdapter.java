@@ -1,6 +1,7 @@
 package com.example.neven.randomuserdata.adapters;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
 import com.example.neven.randomuserdata.R;
-import com.example.neven.randomuserdata.models.Result;
+
 
 import java.util.List;
 
@@ -30,23 +31,19 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-
-        /*@BindView(R.id.textView)
-        TextView tvEmail;
-
-        @BindView(R.id.ivLogo)
-        ImageView ivLogo;*/
-
-      /*  @BindView(R.id.tvHeader)
+        @Nullable
+        @BindView(R.id.tvHeader)
         TextView tvHeader;
 
-        @BindView(R.id.tvChild)
-        TextView tvChild;*/
+
+        @Nullable
+        @BindView(R.id.ivPersonPic)
+        ImageView ivPersonPic;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            //  ButterKnife.bind(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 
@@ -88,8 +85,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
         }
 
 
-
-
     }
 
     @Override
@@ -106,43 +101,40 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
 
     private void bindHeaderItem(MyViewHolder holder, int position) {
 
-        TextView tvHeader = (TextView) holder.itemView.findViewById(R.id.tvHeader);
-        tvHeader.setText(listItems.get(position).getTitleOrPicURL());
-
-
-        // holder.tvHeader.setText(listResults.get(position).getTitle());
-
+        holder.tvHeader.setText(listItems.get(position).getTitleOrPicURL());
 
     }
 
     private void bindChildItem(MyViewHolder holder, int position) {
 
-        ImageView ivPersonPic=(ImageView)holder.itemView.findViewById(R.id.ivPersonPic);
 
         Glide
                 .with(context)
                 .load(listItems.get(position).getTitleOrPicURL())
                 .placeholder(R.mipmap.ic_launcher)
                 .crossFade()
-                .into(ivPersonPic);
-
-       // TextView tvChild = (TextView) holder.itemView.findViewById(R.id.tvChild);
-       // tvChild.setText(listResults.get(position).getTitle());
-
-        // holder.tvChild.setText(listResults.get(position).getTitle());
+                .into(holder.ivPersonPic);
 
 
     }
 
     public boolean isHeaderType(int position) {
 
-        return listItems.get(position).getItemType() == Item.HEADER_ITEM_TYPE ? true : false;
+        boolean value;
+
+        if (listItems.get(position).getItemType() == Item.HEADER_ITEM_TYPE) {
+
+            value = true;
+
+        } else {
+
+            value = false;
+        }
+
+        return value;
+
+
     }
 
-    public void addItem(Item item) {
 
-        listItems.add(item);
-        notifyDataSetChanged();
-
-    }
 }

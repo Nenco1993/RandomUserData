@@ -1,7 +1,6 @@
 package com.example.neven.randomuserdata.views;
 
 import com.example.neven.randomuserdata.adapters.Item;
-import com.example.neven.randomuserdata.models.Result;
 
 import java.util.List;
 

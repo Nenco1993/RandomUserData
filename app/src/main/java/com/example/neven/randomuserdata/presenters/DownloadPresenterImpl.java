@@ -1,6 +1,5 @@
 package com.example.neven.randomuserdata.presenters;
 
-import android.util.Log;
 import com.example.neven.randomuserdata.adapters.ChildItem;
 import com.example.neven.randomuserdata.adapters.HeaderItem;
 import com.example.neven.randomuserdata.adapters.Item;
