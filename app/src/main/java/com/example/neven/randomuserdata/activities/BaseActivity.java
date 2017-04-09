@@ -10,10 +10,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
 
-        ((MyApplication)getApplication()).getAppComponent().inject(this);
-
+        ((MyApplication) getApplication()).getAppComponent().inject(this);
 
 
     }

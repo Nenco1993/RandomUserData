@@ -16,7 +16,7 @@ import javax.inject.Singleton;
 public interface AppComponent {
 
 
-    ListComponent injectSubComp(ListModule module);
+    ListComponent newListSubComponent(ListModule module);
 
 
     void inject(BaseActivity activity);
